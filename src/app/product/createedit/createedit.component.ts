@@ -12,18 +12,18 @@ export class CreateeditComponent implements OnInit {
   showCreateEditPopUpById: number;
   successfulSave: boolean;
 
-  name: string = "";
-  image: string = "";
+  warehouseId: number = 0;
+  description: string = "";
   price: number = 0;
 
   constructor(private productService: ProductService) {
-    this.productService.showCreateEditPopUpById.subscribe((data) => {
+    this.productService.showCreateEditPopUpById.subscribe(data => {
       this.showCreateEditPopUpById = data;
     });
 
     this.productService.productToEditObs.subscribe(data => {
-      this.name = data.name;
-      this.image = data.image;
+      this.warehouseId = data.warehouseId;
+      this.description = data.description;
       this.price = data.price;
     });
   }
@@ -36,8 +36,8 @@ export class CreateeditComponent implements OnInit {
     if (toSave === true) {
       var product = new Product();
       product.id = this.showCreateEditPopUpById;
-      product.name = this.name;
-      product.image = this.image;
+      product.warehouseId = this.warehouseId;
+      product.description = this.description;
       product.price = this.price;
 
       if (this.showCreateEditPopUpById == 0) {

@@ -39,4 +39,8 @@ export class ListComponent implements OnInit {
   delete(id: number) {
     this.productService.showDeletePopUpById.next(id);
   }
+
+  showImages(id: number) {
+    this.productService.getImagesByProductId(id);
+  }
 }

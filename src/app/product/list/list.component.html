@@ -2,21 +2,22 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Image</th>
+      <th>Warehouse ID</th>
+      <th>Description</th>
       <th>Price</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of products">
-      <td>{{ item.name }}</td>
-      <td><img src="{{ item.image }}" class="image-size rounded" /></td>
+      <td>{{ item.warehouseId }}</td>
+      <td>{{ item.description }}</td>
       <td>{{ item.price }}</td>
       <td>
         <div class="row remove-margin">
-          <button class="btn btn-warning button-icon-padding" (click)="edit(item.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-          <button class="btn btn-danger button-icon-padding" (click)="delete(item.id)"><i class="fa fa-times" aria-hidden="true"></i></button>
+          <button class="btn btn-warning button-icon-padding table-button-margin" (click)="edit(item.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="btn btn-danger button-icon-padding table-button-margin" (click)="delete(item.id)"><i class="fa fa-times" aria-hidden="true"></i></button>
+          <button class="btn btn-primary button-icon-padding table-button-margin" (click)="showImages(item.id)"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
         </div>
       </td>
     </tr>
@@ -24,3 +25,4 @@
 </table>
 <app-product-createedit></app-product-createedit>
 <app-product-delete></app-product-delete>
+<app-product-image></app-product-image>

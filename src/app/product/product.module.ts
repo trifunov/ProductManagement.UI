@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from '../shared/services/product.service';
 import { CommonModule } from '@angular/common';
 import { CreateeditComponent } from './createedit/createedit.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
-  declarations: [DeleteComponent, ListComponent, CreateeditComponent ],
+  declarations: [DeleteComponent, ListComponent, CreateeditComponent, ImageComponent ],
   imports: [
     CommonModule,
     FormsModule
